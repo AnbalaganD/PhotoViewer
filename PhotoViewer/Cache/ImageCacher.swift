@@ -6,9 +6,8 @@
 //
 
 import Foundation
-import SwiftUI
 
-final class ImageCacher: ObservableObject {
+final class ImageCacher {
     private let cache = Cache.shared
     private let urlSession: URLSession
 
