@@ -14,15 +14,6 @@ struct PhotoViewerApp: App {
             NavigationView {
                 PhotoListScreen()
             }
-//            .onAppear {
-//                test()
-//            }
         }
     }
-
-//    func test() {
-//        Task {
-//            try await ImageCacher.shared.load(from: "https://via.placeholder.com/150/3a6ebe")
-//        }
-//    }
 }
