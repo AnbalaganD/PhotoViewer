@@ -16,15 +16,16 @@ struct CacheImage<Content: View, Placeholder: View>: View {
     let placeholder: () -> Placeholder
 
     var body: some View {
-        ZStack {
-            if let imageData, let image = Image(data: imageData) {
-                content(image)
-            } else {
-                placeholder()
-            }
-        }
-        .task {
-            await getImage()
+        loadContent()
+            .task { await getImage() }
+    }
+
+    @ViewBuilder
+    private func loadContent() -> some View {
+        if let imageData, let image = Image(data: imageData) {
+            content(image)
+        } else {
+            placeholder()
         }
     }
 
