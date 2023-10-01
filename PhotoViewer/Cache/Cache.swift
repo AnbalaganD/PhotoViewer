@@ -59,17 +59,31 @@ final class Cache {
     func retrive(key: String) -> Data? {
         lock.with {
             if let node = store[key] {
+                arrange(node)
                 return node.value
             }
             return nil
         }
     }
 
+    private func arrange(_ node: Node) {
+        if node === head { return }
+
+        if node === tail {
+            tail = node.previous
+        }
+
+        node.previous?.next = node.next
+        node.next = head
+        head?.previous = node
+        node.previous = nil
+        head = node
+    }
+
     private func remove() {
         if let node = tail {
             tail = node.previous
-            tail?.next = nil
-            store[node.key] = nil
+            store.removeValue(forKey: node.key)
         }
     }
 
