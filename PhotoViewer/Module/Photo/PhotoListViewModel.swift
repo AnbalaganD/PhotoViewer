@@ -13,17 +13,16 @@ final class PhotoListViewModel: ObservableObject {
     private let photoService = PhotoService()
 
     init() {
-        Task {
-            await fetchPhoto()
-        }
+        fetchPhoto()
     }
 
-    @MainActor
-    private func fetchPhoto() async {
-        do {
-            photos = try await photoService.photos()
-        } catch let error {
-            print(error)
+    private func fetchPhoto() {
+        Task { @MainActor in
+            do {
+                photos = try await photoService.photos()
+            } catch let error {
+                print(error)
+            }
         }
     }
 }

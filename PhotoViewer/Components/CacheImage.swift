@@ -17,12 +17,8 @@ struct CacheImage<Content: View, Placeholder: View>: View {
 
     var body: some View {
         ZStack {
-            if let imageData {
-                if let image = Image(data: imageData) {
-                    content(image)
-                } else {
-                    placeholder()
-                }
+            if let imageData, let image = Image(data: imageData) {
+                content(image)
             } else {
                 placeholder()
             }
