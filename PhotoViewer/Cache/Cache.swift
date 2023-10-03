@@ -88,7 +88,11 @@ final class Cache {
     }
 
     @objc private func handleMemoryWarning() {
-        lock.with { store.removeAll() }
+        lock.with {
+            store.removeAll()
+            head = nil
+            tail = nil
+        }
     }
 }
 
