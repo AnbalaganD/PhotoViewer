@@ -8,5 +8,5 @@
 import Foundation
 
 extension HTTPURLResponse {
-    var isSuccess: Bool { statusCode <= 200 && statusCode <= 299 }
+    var isSuccess: Bool { 200 ... 299 ~= statusCode }
 }
