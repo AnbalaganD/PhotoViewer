@@ -28,7 +28,7 @@ final class Cache {
     }
 
     func storeData(data: Data, forKey key: String) {
-        lock.with {
+        lock.withLock {
             let node = Node(value: data, key: key)
 
             if store.count == cost {
@@ -57,7 +57,7 @@ final class Cache {
     }
 
     func retrive(key: String) -> Data? {
-        lock.with {
+        lock.withLock {
             if let node = store[key] {
                 arrange(node)
                 return node.value
@@ -88,7 +88,7 @@ final class Cache {
     }
 
     @objc private func handleMemoryWarning() {
-        lock.with {
+        lock.withLock {
             store.removeAll()
             head = nil
             tail = nil
