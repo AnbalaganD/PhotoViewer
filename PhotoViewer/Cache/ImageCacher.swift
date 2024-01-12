@@ -24,7 +24,7 @@ final class ImageCacher {
             return imageData
         }
 
-        let (data, _) = try await urlSession.data(for: URLRequest(url: url))
+        let (data, _) = try await urlSession.data(from: url)
         cache.storeData(data: data, forKey: url.absoluteString)
         return data
     }
