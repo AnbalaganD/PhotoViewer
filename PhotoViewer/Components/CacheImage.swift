@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CacheImage<Content: View, Placeholder: View>: View {
+struct CacheImage<Content: View, Placeholder: View>: View, @unchecked Sendable {
     private let imageCacher = ImageCacher.shared
     @State private var imageData: Data?
 
@@ -31,7 +31,8 @@ struct CacheImage<Content: View, Placeholder: View>: View {
 
     private func getImage() async {
         do {
-            imageData = try await imageCacher.load(from: url)
+            let data = try await imageCacher.load(from: url)
+            await MainActor.run { imageData = data }
         } catch let error {
             print(error)
         }

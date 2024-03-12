@@ -6,9 +6,12 @@
 //
 
 import Foundation
-import UIKit
 
-final class Cache {
+final class Cache: @unchecked Sendable {
+    private let dispatchSource = DispatchSource.makeMemoryPressureSource(
+        eventMask: [.warning, .critical]
+    )
+
     private var store = [String: Node]()
     private let lock = NSLock()
     private let cost: Int
@@ -18,13 +21,7 @@ final class Cache {
 
     init(cost: Int = .max) {
         self.cost = cost
-
-        NotificationCenter.default.addObserver(
-            self,
-            selector: #selector(handleMemoryWarning),
-            name: UIApplication.didReceiveMemoryWarningNotification,
-            object: nil
-        )
+        monitorMemoryPressure()
     }
 
     func storeData(data: Data, forKey key: String) {
@@ -86,13 +83,31 @@ final class Cache {
             store.removeValue(forKey: node.key)
         }
     }
+    
+    private func monitorMemoryPressure() {
+        dispatchSource.setEventHandler {[weak self] in
+            guard let self else { return }
+            
+            if dispatchSource.isCancelled { return }
+            
+            switch dispatchSource.data {
+            case .critical, .warning: handleMemoryWarning()
+            default: break
+            }
+        }
+        dispatchSource.activate()
+    }
 
-    @objc private func handleMemoryWarning() {
+    private func handleMemoryWarning() {
         lock.withLock {
             store.removeAll()
             head = nil
             tail = nil
         }
+    }
+    
+    deinit {
+        dispatchSource.cancel()
     }
 }
 

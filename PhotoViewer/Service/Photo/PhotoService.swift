@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PhotoService {
+final class PhotoService: Sendable {
     private let remoteService: RemoteService
     init(remoteService: RemoteService = Remote.sharedRemoteService) {
         self.remoteService = remoteService

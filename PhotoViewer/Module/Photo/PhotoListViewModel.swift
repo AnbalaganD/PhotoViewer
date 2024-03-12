@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class PhotoListViewModel: ObservableObject {
+final class PhotoListViewModel: ObservableObject, @unchecked Sendable {
     @Published var photos = [Photo]()
 
     private let photoService = PhotoService()

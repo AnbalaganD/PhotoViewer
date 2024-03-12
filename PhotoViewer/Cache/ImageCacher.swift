@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class ImageCacher {
+final class ImageCacher: Sendable {
     private let cache = Cache.shared
     private let urlSession: URLSession
 

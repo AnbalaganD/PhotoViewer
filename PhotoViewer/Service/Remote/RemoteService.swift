@@ -9,7 +9,7 @@ import Foundation
 
 enum Remote { }
 
-protocol RemoteService {
+protocol RemoteService: Sendable {
     func execute<T: Decodable>(request: Remote.Request) async throws -> T
 }
 
