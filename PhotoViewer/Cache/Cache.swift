@@ -83,13 +83,13 @@ final class Cache: @unchecked Sendable {
             store.removeValue(forKey: node.key)
         }
     }
-    
+
     private func monitorMemoryPressure() {
         dispatchSource.setEventHandler {[weak self] in
             guard let self else { return }
-            
+
             if dispatchSource.isCancelled { return }
-            
+
             switch dispatchSource.data {
             case .critical, .warning: handleMemoryWarning()
             default: break
@@ -105,7 +105,7 @@ final class Cache: @unchecked Sendable {
             tail = nil
         }
     }
-    
+
     deinit {
         dispatchSource.cancel()
     }

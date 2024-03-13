@@ -17,8 +17,8 @@ extension Remote {
 
         init(
             url: URLConvertible,
-            header: [String : String]? = nil,
-            parameter: [String : String]? = nil,
+            header: [String: String]? = nil,
+            parameter: [String: String]? = nil,
             body: BodyConvertible? = nil,
             method: HTTPMethod = .get
         ) {
@@ -48,4 +48,3 @@ extension Remote {
         }
     }
 }
-

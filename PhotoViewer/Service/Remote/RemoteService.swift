@@ -28,7 +28,7 @@ final class RemoteServiceImp: RemoteService {
         self.jsonDecoder = jsonDecoder
     }
 
-    func execute<T>(request: Remote.Request) async throws -> T where T : Decodable {
+    func execute<T>(request: Remote.Request) async throws -> T where T: Decodable {
         let url = try getRequestURL(request)
 
         var urlRequest = URLRequest(url: url)
@@ -44,7 +44,7 @@ final class RemoteServiceImp: RemoteService {
 
         let (data, urlResponse) = try await urlSession.data(for: urlRequest)
 
-        if let httpURLResponse = urlResponse as? HTTPURLResponse, !httpURLResponse.isSuccess  {
+        if let httpURLResponse = urlResponse as? HTTPURLResponse, !httpURLResponse.isSuccess {
             throw RemoteError.general(
                 status: httpURLResponse.description,
                 statusCode: httpURLResponse.statusCode
