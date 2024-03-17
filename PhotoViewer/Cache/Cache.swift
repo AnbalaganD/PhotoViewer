@@ -16,8 +16,8 @@ final class Cache: @unchecked Sendable {
     private let lock = NSLock()
     private let cost: Int
 
-    private var head: Node?
-    private var tail: Node?
+    private weak var head: Node?
+    private weak var tail: Node?
 
     init(cost: Int = .max) {
         self.cost = cost
