@@ -11,8 +11,15 @@ import SwiftUI
 struct PhotoViewerApp: App {
     var body: some Scene {
         WindowGroup {
-            NavigationView {
-                PhotoListScreen()
+            if #available(iOS 16.0, *) {
+                NavigationStack {
+                    PhotoListScreen()
+                }
+            } else {
+                NavigationView {
+                    PhotoListScreen()
+                        .navigationViewStyle(.stack)
+                }
             }
         }
     }
