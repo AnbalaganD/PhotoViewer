@@ -21,11 +21,13 @@ final class ImageCacher: Sendable {
         guard let url = url.asURL() else { throw CacheError.invalidURL }
 
         if let imageData = cache.retrive(key: url.absoluteString) {
-            return imageData
+            let decompressedData = try imageData.decompressed(using: .brotli)
+            return decompressedData
         }
 
         let (data, _) = try await urlSession.data(from: url)
-        cache.storeData(data: data, forKey: url.absoluteString)
+        let compressedData = try data.compressed(using: .brotli)
+        cache.storeData(data: compressedData, forKey: url.absoluteString)
         return data
     }
 }
