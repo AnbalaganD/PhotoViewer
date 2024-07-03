@@ -28,6 +28,7 @@
 		54C99ED02AC8258F00399F84 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ECF2AC8258F00399F84 /* EndPoint.swift */; };
 		54C99ED22AC8299800399F84 /* PhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED12AC8299800399F84 /* PhotoListCell.swift */; };
 		54C99ED52AC8309300399F84 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED42AC8309300399F84 /* Cache.swift */; };
+		99BC3E842C35CF0D00D1D9E4 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		54C99ECF2AC8258F00399F84 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		54C99ED12AC8299800399F84 /* PhotoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCell.swift; sourceTree = "<group>"; };
 		54C99ED42AC8309300399F84 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				54C99EBA2AC8237A00399F84 /* HTTPURLResponseExtension.swift */,
 				54140EB92AC89C3500477CB5 /* ImageExtension.swift */,
+				99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -293,6 +296,7 @@
 				54C99EC32AC823F200399F84 /* PhotoDetailScreen.swift in Sources */,
 				54C99ED22AC8299800399F84 /* PhotoListCell.swift in Sources */,
 				54C99EC12AC823D800399F84 /* PhotoListViewModel.swift in Sources */,
+				99BC3E842C35CF0D00D1D9E4 /* DataExtension.swift in Sources */,
 				54C99EBB2AC8237A00399F84 /* HTTPURLResponseExtension.swift in Sources */,
 				54140EB82AC8918900477CB5 /* ImageCacher.swift in Sources */,
 				54C99EBE2AC823BE00399F84 /* PhotoListScreen.swift in Sources */,
