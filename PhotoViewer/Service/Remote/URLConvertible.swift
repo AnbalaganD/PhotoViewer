@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol URLConvertible {
+protocol URLConvertible: Sendable {
     func asURL() -> URL?
 }
 
