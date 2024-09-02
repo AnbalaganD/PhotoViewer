@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 70;
+	objectVersion = 56;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -28,6 +28,7 @@
 		54C99ED02AC8258F00399F84 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ECF2AC8258F00399F84 /* EndPoint.swift */; };
 		54C99ED22AC8299800399F84 /* PhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED12AC8299800399F84 /* PhotoListCell.swift */; };
 		54C99ED52AC8309300399F84 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED42AC8309300399F84 /* Cache.swift */; };
+		99877C062C85E184002E535C /* PhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99877C042C85E184002E535C /* PhotoViewerTests.swift */; };
 		99BC3E842C35CF0D00D1D9E4 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,12 +66,9 @@
 		54C99ED12AC8299800399F84 /* PhotoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCell.swift; sourceTree = "<group>"; };
 		54C99ED42AC8309300399F84 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
 		9981F39F2C69E85D0009DA7E /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		99877C042C85E184002E535C /* PhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerTests.swift; sourceTree = "<group>"; };
 		99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		9981F3A02C69E85D0009DA7E /* PhotoViewerTests */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = PhotoViewerTests; sourceTree = "<group>"; };
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		54C99E972AC8227800399F84 /* Frameworks */ = {
@@ -102,7 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				54C99E9C2AC8227800399F84 /* PhotoViewer */,
-				9981F3A02C69E85D0009DA7E /* PhotoViewerTests */,
+				99877C052C85E184002E535C /* PhotoViewerTests */,
 				54C99E9B2AC8227800399F84 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -241,6 +239,14 @@
 			path = Cache;
 			sourceTree = "<group>";
 		};
+		99877C052C85E184002E535C /* PhotoViewerTests */ = {
+			isa = PBXGroup;
+			children = (
+				99877C042C85E184002E535C /* PhotoViewerTests.swift */,
+			);
+			path = PhotoViewerTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -273,9 +279,6 @@
 			);
 			dependencies = (
 				9981F3A42C69E85D0009DA7E /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				9981F3A02C69E85D0009DA7E /* PhotoViewerTests */,
 			);
 			name = PhotoViewerTests;
 			packageProductDependencies = (
@@ -373,6 +376,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				99877C062C85E184002E535C /* PhotoViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
