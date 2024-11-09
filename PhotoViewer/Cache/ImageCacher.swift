@@ -27,7 +27,7 @@ final class ImageCacher: Sendable {
 
         let (data, _) = try await urlSession.data(from: url)
         let compressedData = try data.compressed(using: .brotli)
-        cache.storeData(data: compressedData, forKey: url.absoluteString)
+        cache.store(data: compressedData, forKey: url.absoluteString)
         return data
     }
 }

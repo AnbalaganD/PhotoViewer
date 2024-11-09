@@ -24,7 +24,7 @@ final class Cache: @unchecked Sendable {
         monitorMemoryPressure()
     }
 
-    func storeData(data: Data, forKey key: String) {
+    func store(data: Data, forKey key: String) {
         lock.withLock {
             let node = Node(value: data, key: key)
 

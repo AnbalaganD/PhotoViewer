@@ -70,7 +70,7 @@ struct CacheTest {
 
 extension Cache {
     func store(_ value: String, forKey key: String) {
-        self.storeData(data: Data(value.utf8), forKey: key)
+        self.store(data: Data(value.utf8), forKey: key)
     }
     
     @discardableResult
