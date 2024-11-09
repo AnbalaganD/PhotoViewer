@@ -28,6 +28,7 @@
 		54C99ED02AC8258F00399F84 /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ECF2AC8258F00399F84 /* EndPoint.swift */; };
 		54C99ED22AC8299800399F84 /* PhotoListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED12AC8299800399F84 /* PhotoListCell.swift */; };
 		54C99ED52AC8309300399F84 /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54C99ED42AC8309300399F84 /* Cache.swift */; };
+		992A53BD2CDFF7950057DA6F /* CacheTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A53BC2CDFF7910057DA6F /* CacheTest.swift */; };
 		99877C062C85E184002E535C /* PhotoViewerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99877C042C85E184002E535C /* PhotoViewerTests.swift */; };
 		99BC3E842C35CF0D00D1D9E4 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +66,7 @@
 		54C99ECF2AC8258F00399F84 /* EndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		54C99ED12AC8299800399F84 /* PhotoListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoListCell.swift; sourceTree = "<group>"; };
 		54C99ED42AC8309300399F84 /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cache.swift; sourceTree = "<group>"; };
+		992A53BC2CDFF7910057DA6F /* CacheTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheTest.swift; sourceTree = "<group>"; };
 		9981F39F2C69E85D0009DA7E /* PhotoViewerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PhotoViewerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99877C042C85E184002E535C /* PhotoViewerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewerTests.swift; sourceTree = "<group>"; };
 		99BC3E832C35CF0D00D1D9E4 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 		99877C052C85E184002E535C /* PhotoViewerTests */ = {
 			isa = PBXGroup;
 			children = (
+				992A53BC2CDFF7910057DA6F /* CacheTest.swift */,
 				99877C042C85E184002E535C /* PhotoViewerTests.swift */,
 			);
 			path = PhotoViewerTests;
@@ -376,6 +379,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992A53BD2CDFF7950057DA6F /* CacheTest.swift in Sources */,
 				99877C062C85E184002E535C /* PhotoViewerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

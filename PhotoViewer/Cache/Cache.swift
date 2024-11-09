@@ -71,6 +71,7 @@ final class Cache: @unchecked Sendable {
         }
 
         node.previous?.next = node.next
+        node.next?.previous = node.previous
         node.next = head
         head?.previous = node
         node.previous = nil
@@ -115,8 +116,8 @@ extension Cache {
     private final class Node {
         let value: Data
         let key: String
-        unowned var next: Node?
-        unowned var previous: Node?
+        weak var next: Node?
+        weak var previous: Node?
 
         init(
             value: Data,
