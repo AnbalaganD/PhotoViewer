@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Combine
 
 final class PhotoListViewModel: ObservableObject, @unchecked Sendable {
     @Published var photos = [Photo]()

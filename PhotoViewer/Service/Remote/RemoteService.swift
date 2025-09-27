@@ -83,7 +83,7 @@ final class RemoteServiceImp: RemoteService {
 }
 
 extension Remote {
-    static let sharedRemoteService: RemoteService = {
+    static let sharedRemoteService: any RemoteService = {
         return RemoteServiceImp()
     }()
 }

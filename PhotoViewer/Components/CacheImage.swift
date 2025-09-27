@@ -11,7 +11,7 @@ struct CacheImage<Content: View, Placeholder: View>: View, @unchecked Sendable {
     private let imageCacher = ImageCacher.shared
     @State private var imageData: Data?
 
-    let url: URLConvertible
+    let url: any URLConvertible
     let content: (Image) -> Content
     let placeholder: () -> Placeholder
 

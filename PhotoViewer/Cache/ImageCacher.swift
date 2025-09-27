@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Compression
 
 final class ImageCacher: Sendable {
     private let cache = Cache.shared
@@ -17,7 +18,7 @@ final class ImageCacher: Sendable {
         self.urlSession = urlSession
     }
 
-    func load(from url: URLConvertible) async throws -> Data {
+    func load(from url: any URLConvertible) async throws -> Data {
         guard let url = url.asURL() else { throw CacheError.invalidURL }
 
         if let imageData = cache.retrive(key: url.absoluteString) {

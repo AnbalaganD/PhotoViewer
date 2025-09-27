@@ -9,17 +9,17 @@ import Foundation
 
 extension Remote {
     struct Request {
-        let url: URLConvertible
+        let url: any URLConvertible
         var parameter: [String: String]?
         var header: [String: String]?
-        var body: BodyConvertible?
+        var body: (any BodyConvertible)?
         let method: HTTPMethod
 
         init(
-            url: URLConvertible,
+            url: any URLConvertible,
             header: [String: String]? = nil,
             parameter: [String: String]? = nil,
-            body: BodyConvertible? = nil,
+            body: (any BodyConvertible)? = nil,
             method: HTTPMethod = .get
         ) {
             self.url = url
@@ -43,7 +43,7 @@ extension Remote {
             parameter?[key] = value
         }
 
-        mutating func setBody(_ body: BodyConvertible) {
+        mutating func setBody(_ body: any BodyConvertible) {
             self.body = body
         }
     }
