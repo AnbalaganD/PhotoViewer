@@ -9,6 +9,7 @@ import Testing
 import Foundation
 @testable import PhotoViewer
 
+@MainActor
 struct CacheTest {
     @Test
     func verifyCachedElement() {
@@ -68,6 +69,7 @@ struct CacheTest {
     }
 }
 
+@MainActor
 extension Cache {
     func store(_ value: String, forKey key: String) {
         self.store(data: Data(value.utf8), forKey: key)
@@ -75,7 +77,7 @@ extension Cache {
     
     @discardableResult
     func get(forKey key: String) -> String? {
-        if let data = self.retrive(key: key) {
+        if let data = self.retrieve(key: key) {
             return String(decoding: data, as: UTF8.self)
         }
         return nil

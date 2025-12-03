@@ -53,7 +53,7 @@ final class Cache: @unchecked Sendable {
         }
     }
 
-    func retrive(key: String) -> Data? {
+    func retrieve(key: String) -> Data? {
         lock.withLock {
             if let node = store[key] {
                 arrange(node)

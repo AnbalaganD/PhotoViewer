@@ -21,7 +21,7 @@ final class ImageCacher: Sendable {
     func load(from url: any URLConvertible) async throws -> Data {
         guard let url = url.asURL() else { throw CacheError.invalidURL }
 
-        if let imageData = cache.retrive(key: url.absoluteString) {
+        if let imageData = cache.retrieve(key: url.absoluteString) {
             let decompressedData = try imageData.decompressed(using: .brotli)
             return decompressedData
         }
